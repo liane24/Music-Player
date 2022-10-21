@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width#device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+   
+
+
+    <div class="container">
+        <div class="top-bar">
+           
+            <i class="material-icons">more_horiz</i>
+
+            <span>Neo Soul Playlist</span>
+            <i class="material-icons">search</i>
+        </div>
+        
+        <div class="img-area">
+            <img src="" alt="">
+        </div>
+        <div class="song-info">
+            <p class="name"></p>
+            <p class="artist"></p>
+            
+            <!--duration: 5:37-->
+    </div>
+    <div class="progress">
+        <div class="progressBar"></div>
+            <div class="timer">
+            <span class="current">0:00</span>
+            <span class="duration">5:42</span>
+            
+        </div>
+        <audio id="audioPlayer"></audio>
+    </div>
+    <div class="controls">
+        <i id="repeat-song" class="material-icons" title="Enable repeat">repeat</i>
+        <i id="previous-song" class="material-icons">fast_rewind</i>
+        <div class="play_pause">
+            <i class="material-icons" title="Enable repeat">play_arrow</i>
+        </div>
+        <i id="next-song" class="material-icons">fast_forward</i>
+        <i id="more-songs" class="material-icons">queue_music</i>
+        </div>
+        <div class="music-library">
+            <div class="header">
+                <div class="row">
+                    <i id="listicon" class="material-icons">queue_music</i>
+                    <span>Your Library</span>
+                </div>
+                <i id="hide" class="material-icons">close</i>
+            </div>
+        <ul>
+            <li>
+                <div class="row">
+                    <span></span>
+                </div>
+                <span class=""></span>
+            </li>
+            
+        </ul>
+        </div>
+       
+    </div>
+
+    <script src="js/music-library.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

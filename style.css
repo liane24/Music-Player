@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+*::before, *::after{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --pink: #ff74a4;
+    --violet: #9f6ea3;
+    --lavender: #f1a7fe;
+    --lightblack: #515c6f;
+    --white: #ffffff;
+    --darkwhite: #cecaca;
+    --pinkshadow: #ffcbdd;
+    --lightbshadow: rgb(0,0,0,0.15);
+    --deepskyblue: #00bfff;
+    --slategray: #708090;
+    --magenta: #d80073;
+    --royalblue: #4169e1;
+    --skyblue: #87ceeb;
+
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container{
+    width: 380px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    padding: 25px 30px;
+    background: var(--white);
+    box-shadow: 0px 6px 15px var(--lightbshadow);
+}
+
+.top-bar, .progress .timer, .controls, .music-library .header, .music-library li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-bar i{
+    font-size: 30px;
+    
+    background: linear-gradient(90deg, var(--skyblue) 0%, var(--royalblue)100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.top-bar span{
+    font-size: 18px;
+    color: var(--lightblack);
+}
+
+.img-area{
+    height: 256px;
+    width: 100%;
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px var(--lightbshadow);
+}
+
+.img-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.song-info{
+    text-align: center;
+    margin: 10px 0;
+    margin: 30px 0;
+    color: var(--lightblack);
+}
+
+.song-info .name{
+    font-size: 21px;
+}
+
+.song-info .artist{
+    opacity: 0.9;
+    font-size: 18px;
+}
+
+.progress{
+    height: 6px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.progress .progressBar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--skyblue) 0%, var(--royalblue)100%);
+}
+
+.progressBar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #000000;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress:hover .progressBar::before{
+    opacity: 1;
+}
+
+.progress .timer{
+    margin-top: 2px;
+}
+
+.timer span{
+    font-size: 13px;
+    color: var(--lightblack);
+}
+.controls{
+    margin: 40px 0 5px 0;
+    cursor: pointer;
+}
+
+.controls i{
+    font-size: 28px;
+    user-select: none;
+    background: linear-gradient(var(--skyblue) 0%, var(--royalblue)100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.controls i:nth-child(2),
+.controls i:nth-child(4){ /*This selector matches every element that is the nth child*/
+    font-size: 42px;
+}
+
+.controls #previous-song{
+    margin-right: -13px;
+}
+
+.controls #next-song{
+    margin-left: -13px;
+}
+
+.controls .play_pause{
+    height: 54px;
+    width: 54px;
+    background: linear-gradient(var(--white) 0%, var(--darkwhite)100%);
+    box-shadow: 0px 0px 5px var(--skyblue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.play_pause::before{
+    content: "";
+    position: absolute;
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background: linear-gradient(var(--skyblue) 0%, var(--royalblue)100%);
+}
+
+.play_pause i{
+    height: 43px;
+    width: 43px;
+    line-height: 43px;
+    text-align: center;
+    border-radius: inherit;
+    background-clip: text;
+    background: inherit;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.music-library{
+    position: absolute;
+    left: 0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    transition: all 0.14s ease-out;
+}
+/*Show class JavaScript*/
+.music-library.show{
+    bottom: 0%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.
+
+.music-library .header .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: var(--lightblack);
+}
+
+.header .row i{
+    cursor: default;
+}
+
+.header .row span{
+    margin-left: 5px;
+}
+
+.header #hide{
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(var(--skyblue) 0%, var(--royalblue)100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header #listicon{
+    cursor: pointer;
+    background: linear-gradient(var(--skyblue) 0%, var(--royalblue)100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.music-library ul{
+    margin: 10px 0;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.music-library ul::-webkit-scrollbar{
+    width: 0px;
+}
+
+.music-library ul li{
+    cursor: pointer;
+    list-style: none;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.music-library ul li:last-child{ 
+    border-bottom: 0px;
+}
+
+.music-library ul li .row span{
+    font-size: 17px;
+}
+ul li .row p{
+    opacity: 0.9;
+    font-size: 15px;
+}
+ul li .duration {
+    font-size: 29px;
+}
+
+.app {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  .status {
+    padding: 40px;
+    min-width: 120px;
+    border-radius: 20px;
+    background-color: #eee;
+    text-align: center;
+    font-size: 80px;
+  }
+  
+  .status.online {
+    border: 8px solid #41a700;
+    color: #41a700;
+  }
+  
+  .status.offline {
+    border: 8px solid #f15c4f;
+    color: #f15c4f;
+  }
